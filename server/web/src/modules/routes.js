@@ -2,14 +2,10 @@
 const fs = require("fs");
 const url = require("url");
 const crypto = require("crypto");
-const base32 = require("base32");
 const rimraf = require("rimraf");
 const sanitize = require("sanitize-filename");
 const ytdl = require('youtube-dl');
 const ffmetadata = require("ffmetadata");
-function b32(x) {
-    return base32.encode(crypto.randomBytes(x, "hex"));
-}
 
 module.exports = (app, wss) => {
     // DL
@@ -88,7 +84,7 @@ function getInfo(url, ip, path, cbErr, cbSuc) {
     });
 }
 function download(info, cbErr, cbSuc, filename) {
-    const args = ["--ffmpeg-location", "/root/bin/"];
+    const args = ["--ffmpeg-location", "/usr/bin/"];
     if (info.audioOnly) args.push("-x");
 
     let uploaderAndTitle = sanitize(info.uploader+" - "+info.title);
@@ -149,7 +145,7 @@ function changeMD(info, dir, cbErr, cbSuc) {
                     // if (info.multiple) md += `-metadata track="${info.index}/${info.fileCount}" `;
                     const file = files[i];
                     cmd.get(
-                        `~/bin/ffmpeg -i '${dir}/${file}' ${md} '${dir}/${file.substr(1)}' -y`,
+                        `/usr/bin/ffmpeg -i '${dir}/${file}' ${md} '${dir}/${file.substr(1)}' -y`,
                         (err, data, stderr) => {
                             if (err) {
                                 cbErr({
@@ -213,7 +209,7 @@ function socketMsg(ws, data, ip, path) {
         open = false;
     });
     if (info.mp3 || info.aac || info.mp4) {
-        info.id = b32(6);
+        info.id = crypto.randomBytes(6).toString('hex');
         info.audioOnly = (info.format != "mp4") ? true : false;
         info.url = data.url;
         console.log(`${path}: ${ip}     ${data.url}`);

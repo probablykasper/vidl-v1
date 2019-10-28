@@ -11,7 +11,6 @@ RUN sudo apt-get install -y nodejs
 # RUN sudo add-apt-repository ppa:mc3man/trusty-media
 
 COPY src/package.json .
-RUN npm install -g  nodemon@1.12.1
 RUN npm install && echo "woah x.x"
 
 
