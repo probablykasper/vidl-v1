@@ -1,3 +1,7 @@
+<p align="center">
+  <a href="https://taskler.kasp.io/" title="Taskler"><img alt="Quill Logo" src="https://raw.githubusercontent.com/probablykasper/vidl-v1/master/logo/logo%201000.png" width="100"></a>
+</p>
+
 # vidl
 Video/audio download site
 
