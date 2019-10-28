@@ -13,8 +13,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // start server
-const server = app.listen(80, () => {
-    console.log("Express server listening on 80");
+const server = app.listen(process.env.PORT || 80, () => {
+    console.log("Express server listening on " + process.env.PORT || 80);
 });
 
 app.get("/", (req, res) => {

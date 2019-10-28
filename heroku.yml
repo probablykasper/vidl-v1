@@ -1,0 +1,5 @@
+build:
+  docker:
+    server: ./server/web/src/Dockerfile
+run:
+  server: npm run prod
