@@ -1,5 +1,3 @@
 build:
   docker:
-    server: ./server/web/Dockerfile
-run:
-  server: npm run prod
+    web: ./server/web/Dockerfile

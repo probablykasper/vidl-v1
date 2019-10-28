@@ -8,6 +8,7 @@ services:
             - 80:80
         volumes:
             - ./web/src:/usr/src/app
+        command: npm run prod
         environment:
             - "NODEJS_VERSION=8.6.0"
             - "VIDL_ENV=prod"
@@ -19,6 +20,7 @@ services:
             - 80:80
         volumes:
             - ./web/src:/usr/src/app
+        command: npm run dev
         environment:
             - "NODEJS_VERSION=8.6.0"
             - "VIDL_ENV=dev"
