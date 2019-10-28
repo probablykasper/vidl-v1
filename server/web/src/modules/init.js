@@ -12,7 +12,7 @@ fs.readdir("files", (err, files) => {
             });
         }
     } else {
-        console.log("Creating files directory");
+        console.log("Error: No files directory detected, creating...");
         console.log(err);
     }
     if (err) {
