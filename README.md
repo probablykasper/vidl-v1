@@ -5,6 +5,8 @@
 # vidl
 Video/audio download site
 
+**Note:** The repo is unmaintained and the server is not online.
+
 ![Screenshot](https://raw.githubusercontent.com/probablykasper/vidl-v1/master/assets/screenshot.png)
 
 # Website
