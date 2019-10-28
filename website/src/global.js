@@ -71,9 +71,7 @@ document.addEventListener("click", (e) => {
     }
 });
 
-const isChrome = !!window.chrome && !!window.chrome.webstore;
-if (isChrome) {
-
+if (window.chrome) {
     const extensionDiv = document.querySelector(".extension.chrome");
     const extensionTooltip = document.querySelector(".extension.chrome .extension-tooltip");
     const svg = extensionDiv.querySelector(".svg");
