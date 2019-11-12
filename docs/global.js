@@ -134,9 +134,7 @@ document.addEventListener("click", function (e) {
     }
 });
 
-var isChrome = !!window.chrome && !!window.chrome.webstore;
-if (isChrome) {
-
+if (window.chrome) {
     var extensionDiv = document.querySelector(".extension.chrome");
     var extensionTooltip = document.querySelector(".extension.chrome .extension-tooltip");
     var svg = extensionDiv.querySelector(".svg");
